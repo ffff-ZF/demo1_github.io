@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>2048</h1>
+            <div class="score-container">
+                <div class="score-box">
+                    <span class="score-title">分数</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="score-box">
+                    <span class="score-title">最高分</span>
+                    <span id="best-score">0</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="game-intro">
+            <p>使用 <strong>方向键</strong> 或 <strong>滑动</strong> 移动方块。相同数字的方块相撞时会合并成一个！</p>
+            <div class="game-controls">
+                <div class="difficulty-selector">
+                    <label for="difficulty">难度：</label>
+                    <select id="difficulty">
+                        <option value="easy">简单</option>
+                        <option value="medium" selected>中等</option>
+                        <option value="hard">困难</option>
+                    </select>
+                </div>
+                <button id="new-game-button">新游戏</button>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <div class="game-message">
+                <p></p>
+                <div class="lower">
+                    <button class="retry-button">再试一次</button>
+                </div>
+            </div>
+            
+            <div class="grid-container">
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+            </div>
+            
+            <div class="tile-container"></div>
+        </div>
+        
+        <div class="leaderboard-container">
+            <h2>排行榜</h2>
+            <div class="leaderboard-tabs">
+                <button class="tab-button active" data-difficulty="easy">简单</button>
+                <button class="tab-button" data-difficulty="medium">中等</button>
+                <button class="tab-button" data-difficulty="hard">困难</button>
+            </div>
+            <div class="leaderboard-content">
+                <table id="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>排名</th>
+                            <th>玩家</th>
+                            <th>分数</th>
+                            <th>日期</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <!-- 排行榜数据将通过JavaScript动态添加 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <footer>
+            <p>经典 2048 游戏 - 合并方块，达到 2048！</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
